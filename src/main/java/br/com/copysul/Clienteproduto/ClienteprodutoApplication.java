@@ -1,10 +1,12 @@
-package br.com.wakanda.Clientepetz;
+package br.com.copysul.Clienteproduto;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import br.com.copysul.Clienteproduto.cliente.domain.Cliente;
 
 @SpringBootApplication
 @RestController
