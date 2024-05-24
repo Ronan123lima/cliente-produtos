@@ -8,11 +8,11 @@
 		<version>3.2.1</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>br.com.wakanda</groupId>
-	<artifactId>Clientepetz</artifactId>
+	<groupId>br.com.copysul</groupId>
+	<artifactId>Clienteproduto</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Clientepetz</name>
-	<description>Programa para Petshop, no qual é cadastrado cliente e petz e suas características</description>
+	<name>Clienteproduto</name>
+	<description>Programa para Impressa do ramo dee impressoras</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
