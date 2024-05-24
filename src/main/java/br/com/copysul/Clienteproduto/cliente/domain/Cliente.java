@@ -45,8 +45,7 @@ public class Cliente {
 	
 	public Cliente(@NotBlank String nomeCompleto, @NotBlank @Email String email, 
 			@NotBlank String celular,
-			String telefone, @NotNull String dataNascimento, @CPF String cpf, 
-			@NotNull String aceitaTermos) {
+			String telefone, @NotNull String dataNascimento, @CPF String cpf, @NotNull String aceitaTermos) {
 		this.nomeCompleto = nomeCompleto;
 		this.email = email;
 		this.celular = celular;
