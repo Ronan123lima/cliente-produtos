@@ -1,5 +1,7 @@
 package br.com.copysul.Clienteproduto.cliente.infra;
 
+import java.util.List;
+
 import org.springframework.stereotype.Repository;
 
 import br.com.copysul.Clienteproduto.cliente.application.repository.ClienteRepository;
@@ -19,5 +21,13 @@ public class ClienteInfraRepository implements ClienteRepository {
 		clienteSpringDatJPARepository.save(cliente);
 		log.info("[finaliza] ClienteInfraRepository - salva");
 		return cliente;
+	}
+
+	@Override
+	public List<Cliente> buscaTodosClientes() {
+		log.info("[inicia] ClienteInfraRepository - buscaTodosClientes");
+		List<Cliente> todosClientes = clienteSpringDatJPARepository.findAll();
+		log.info("[finaliza] ClienteInfraRepository - buscaTodosClientes");
+		return todosClientes;
 	}
 }
