@@ -1,6 +1,7 @@
 package br.com.copysul.Clienteproduto.cliente.application.api;
 
 import java.util.List;
+import java.util.UUID;
 
 import org.springframework.web.bind.annotation.RestController;
 
@@ -28,5 +29,14 @@ public class ClienteController implements ClienteApi {
 		List<ClienteListResponse> clientes = clienteService.buscaTodosClientes();
 		log.info("[finaliza] ClienteController - getTodosClientes");
 		return clientes;
-	} 
+	}
+
+	@Override
+	public ClienteDetalhadoResponse getClientesAtravesId(UUID idCliente) {
+		log.info("[inicia] ClienteController - getClientesAtravesId");
+		log.info("[idCliente]{}",idCliente);
+		log.info("[finaliza] ClienteController - getClientesAtravesId");
+		return null;
+	}
+
 }
