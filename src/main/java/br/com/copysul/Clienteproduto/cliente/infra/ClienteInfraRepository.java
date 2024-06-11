@@ -4,10 +4,12 @@ import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Repository;
 
 import br.com.copysul.Clienteproduto.cliente.application.repository.ClienteRepository;
 import br.com.copysul.Clienteproduto.cliente.domain.Cliente;
+import br.com.copysul.Clienteproduto.handler.APIException;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 
@@ -37,7 +39,7 @@ public class ClienteInfraRepository implements ClienteRepository {
 	public Cliente buscaClienteAtravesId(UUID idCliente) {
 		log.info("[inicia] ClienteInfraRepository - buscaClienteAtravesId");
 		Cliente cliente = clienteSpringDatJPARepository.findById(idCliente)
-				.orElseThrow(() -> new RuntimeException("Cliente não encontrado!"));
+				.orElseThrow(() -> APIException.build(HttpStatus.NOT_FOUND, "Cliente não encontrado!"));
 		log.info("[finaliza] ClienteInfraRepository - buscaClienteAtravesId");
 		return cliente;
 	}

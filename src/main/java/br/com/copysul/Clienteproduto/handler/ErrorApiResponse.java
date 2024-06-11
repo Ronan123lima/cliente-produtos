@@ -1,4 +1,4 @@
-package dev.wakandaacademy.produdoro.handler;
+package br.com.copysul.Clienteproduto.handler;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 
