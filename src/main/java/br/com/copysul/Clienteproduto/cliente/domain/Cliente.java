@@ -30,6 +30,7 @@ public class Cliente {
 	private String nomeCompleto;
 	@NotBlank
 	@Email
+	@Column(unique = true)
 	private String email;
 	@NotBlank
 	private String celular;
@@ -37,6 +38,7 @@ public class Cliente {
 	@NotNull
 	private String dataNascimento;
 	@CPF
+	@Column(unique = true)
 	private String cpf;
 	@NotNull
 	private Boolean aceitaTermos;
