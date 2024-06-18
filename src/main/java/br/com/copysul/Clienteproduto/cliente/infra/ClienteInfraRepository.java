@@ -28,7 +28,7 @@ public class ClienteInfraRepository implements ClienteRepository {
 			throw APIException.build(HttpStatus.BAD_REQUEST, "Existem dados duplicados", e);
 		}
 		clienteSpringDatJPARepository.save(cliente);
-		log.info("[finaliza] ClienteInfraRepository - salva");
+		log.info("[finaliza] ClienteInfraRepository - salva"); 
 		return cliente;
 	}
 
