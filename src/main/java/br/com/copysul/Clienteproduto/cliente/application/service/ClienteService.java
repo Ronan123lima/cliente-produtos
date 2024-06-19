@@ -3,6 +3,7 @@ package br.com.copysul.Clienteproduto.cliente.application.service;
 import java.util.List;
 import java.util.UUID;
 
+import br.com.copysul.Clienteproduto.cliente.application.api.ClienteAlteracaoRequest;
 import br.com.copysul.Clienteproduto.cliente.application.api.ClienteDetalhadoResponse;
 import br.com.copysul.Clienteproduto.cliente.application.api.ClienteListResponse;
 import br.com.copysul.Clienteproduto.cliente.application.api.ClienteRequest;
@@ -13,5 +14,5 @@ public interface ClienteService {
 	List<ClienteListResponse> buscaTodosClientes();
 	ClienteDetalhadoResponse buscaClienteAtravesId(UUID idCliente);
 	void deletaClienteAtravesId(UUID idCliente);
+	void patchAlteraCliente(UUID idCliente, ClienteAlteracaoRequest clienteAlteracaoRequest);
 }
- 

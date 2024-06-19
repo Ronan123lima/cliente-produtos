@@ -54,6 +54,7 @@ public class ClienteController implements ClienteApi {
 	public void patchAlteraCliente(UUID idCliente, @Valid ClienteAlteracaoRequest clienteAlteracaoRequest) {
 		log.info("[inicia] ClienteController - patchAlteraCliente");
 		log.info("[idCliente]{}",idCliente);
+		clienteService.patchAlteraCliente(idCliente, clienteAlteracaoRequest);
 		log.info("[finaliza] ClienteController - patchAlteraCliente");
 	}
 
