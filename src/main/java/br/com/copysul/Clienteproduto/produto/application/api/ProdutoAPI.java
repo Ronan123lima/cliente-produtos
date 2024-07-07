@@ -24,4 +24,8 @@ public interface ProdutoAPI {
 	@GetMapping
 	@ResponseStatus(code = HttpStatus.OK)
 	List<ProdutoClienteListResponse> getProdutosDoClienteComId(@PathVariable UUID idCliente);
+	
+	@GetMapping(value = "{idProduto}")
+	@ResponseStatus(code = HttpStatus.OK)
+	ProdutoClienteDetalheResponse getProdutoDoClienteComId(@PathVariable UUID idCliente, @PathVariable UUID idProduto);
 }
