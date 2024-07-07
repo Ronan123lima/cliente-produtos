@@ -6,7 +6,6 @@ import java.util.UUID;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.copysul.Clienteproduto.produto.application.service.ProdutoService;
-import br.com.copysul.Clienteproduto.produto.domain.Produto;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
@@ -15,20 +14,23 @@ import lombok.extern.log4j.Log4j2;
 @Log4j2
 @RequiredArgsConstructor
 public class ProdutoController implements ProdutoAPI {
-	 private final ProdutoService produtoService;
+	private final ProdutoService produtoService;
+
 	@Override
 	public ProdutoResponse postProduto(UUID idCliente, @Valid ProdutoRequest produtoRequest) {
 		log.info("[inicia} ProdutoController - postProduto");
 		log.info("[idClienteidCliente} {}", idCliente);
-		ProdutoResponse produto = produtoService.criaProduto(idCliente,produtoRequest);
+		ProdutoResponse produto = produtoService.criaProduto(idCliente, produtoRequest);
 		log.info("[finaliza} ProdutoController - postProduto");
 		return produto;
 	}
+
 	@Override
 	public List<ProdutoClienteListResponse> getProdutosDoClienteComId(UUID idCliente) {
 		log.info("[inicia} ProdutoController - getProdutosDoClienteComId");
-		log.info("[idClienteidCliente} {}", idCliente);
+		log.info("[idClient	eidCliente} {}", idCliente);
+		List<ProdutoClienteListResponse> produtosDoCliente = produtoService.buscaProdutosDoClienteComID(idCliente);
 		log.info("[finaliza} ProdutoController - getProdutosDoClienteComId");
-		return null;
+		return produtosDoCliente;
 	}
 }

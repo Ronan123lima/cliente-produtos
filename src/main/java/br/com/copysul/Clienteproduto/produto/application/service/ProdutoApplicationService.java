@@ -1,10 +1,12 @@
 package br.com.copysul.Clienteproduto.produto.application.service;
 
+import java.util.List;
 import java.util.UUID;
 
 import org.springframework.stereotype.Service;
 
 import br.com.copysul.Clienteproduto.cliente.application.service.ClienteService;
+import br.com.copysul.Clienteproduto.produto.application.api.ProdutoClienteListResponse;
 import br.com.copysul.Clienteproduto.produto.application.api.ProdutoRequest;
 import br.com.copysul.Clienteproduto.produto.application.api.ProdutoResponse;
 import br.com.copysul.Clienteproduto.produto.domain.Produto;
@@ -26,6 +28,14 @@ public class ProdutoApplicationService implements ProdutoService {
 		Produto produto = produtoRepository.salvaProduto(new Produto(idCliente, produtoRequest));
 		log.info("[finish] ProdutoApplicationService - criaProduto ");
 		return new ProdutoResponse(produto.getIdProduto());
+	}
+
+	@Override
+	public List<ProdutoClienteListResponse> buscaProdutosDoClienteComID(UUID idCliente) {
+		log.info("[start] ProdutoApplicationService - buscaProdutosDoClienteComID ");
+		clienteService.buscaClienteAtravesId(idCliente);		
+		log.info("[finish] ProdutoApplicationService - buscaProdutosDoClienteComID ");
+		return null;
 	}
 
 }
