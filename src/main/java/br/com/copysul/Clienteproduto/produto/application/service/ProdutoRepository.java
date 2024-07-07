@@ -8,4 +8,5 @@ import br.com.copysul.Clienteproduto.produto.domain.Produto;
 public interface ProdutoRepository {
 	Produto salvaProduto(Produto produto);
 	List<Produto> buscaProdutosDoClienteComID(UUID idCliente);
+	Produto buscaProduto(UUID idProduto);
 }

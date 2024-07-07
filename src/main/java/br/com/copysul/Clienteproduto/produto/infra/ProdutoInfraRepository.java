@@ -3,8 +3,10 @@ package br.com.copysul.Clienteproduto.produto.infra;
 import java.util.List;
 import java.util.UUID;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Repository;
 
+import br.com.copysul.Clienteproduto.handler.APIException;
 import br.com.copysul.Clienteproduto.produto.application.service.ProdutoRepository;
 import br.com.copysul.Clienteproduto.produto.domain.Produto;
 import lombok.RequiredArgsConstructor;
@@ -30,5 +32,15 @@ public class ProdutoInfraRepository implements ProdutoRepository {
 		var produtos = produtoSpringDataJPARepository.findByIdCliente(idCliente);
 		log.info("[finish] ProdutoInfraRepository - buscaProdutosDoClienteComID ");
 		return produtos;
+	}
+
+	@Override
+	public Produto buscaProduto(UUID idProduto) {
+		log.info("[start] ProdutoInfraRepository - buscaProduto");
+		var produto = produtoSpringDataJPARepository.findById(idProduto) 
+				.orElseThrow(() -> APIException.build(HttpStatus.
+						NOT_FOUND, "Produto não encontrado para o idProduto =" + idProduto));
+		log.info("[finish] ProdutoInfraRepository - buscaProduto");
+		return produto;
 	}
 }
