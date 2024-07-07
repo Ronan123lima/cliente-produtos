@@ -1,5 +1,6 @@
 package br.com.copysul.Clienteproduto.produto.application.api;
 
+import java.util.List;
 import java.util.UUID;
 
 import org.springframework.web.bind.annotation.RestController;
@@ -23,5 +24,11 @@ public class ProdutoController implements ProdutoAPI {
 		log.info("[finaliza} ProdutoController - postProduto");
 		return produto;
 	}
-
+	@Override
+	public List<ProdutoClienteListResponse> getProdutosDoClienteComId(UUID idCliente) {
+		log.info("[inicia} ProdutoController - getProdutosDoClienteComId");
+		log.info("[idClienteidCliente} {}", idCliente);
+		log.info("[finaliza} ProdutoController - getProdutosDoClienteComId");
+		return null;
+	}
 }
