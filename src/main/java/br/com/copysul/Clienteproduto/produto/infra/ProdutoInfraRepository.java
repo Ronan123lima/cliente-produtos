@@ -1,5 +1,8 @@
 package br.com.copysul.Clienteproduto.produto.infra;
 
+import java.util.List;
+import java.util.UUID;
+
 import org.springframework.stereotype.Repository;
 
 import br.com.copysul.Clienteproduto.produto.application.service.ProdutoRepository;
@@ -21,4 +24,10 @@ public class ProdutoInfraRepository implements ProdutoRepository {
 		return produto;
 	}
 
+	@Override
+	public List<Produto> buscaProdutosDoClienteComID(UUID idCliente) {
+		log.info("[start] ProdutoInfraRepository - buscaProdutosDoClienteComID ");
+		log.info("[finish] ProdutoInfraRepository - buscaProdutosDoClienteComID ");
+		return null;
+	}
 }

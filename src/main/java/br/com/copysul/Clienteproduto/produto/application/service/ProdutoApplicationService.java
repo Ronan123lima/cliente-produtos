@@ -34,8 +34,9 @@ public class ProdutoApplicationService implements ProdutoService {
 	public List<ProdutoClienteListResponse> buscaProdutosDoClienteComID(UUID idCliente) {
 		log.info("[start] ProdutoApplicationService - buscaProdutosDoClienteComID ");
 		clienteService.buscaClienteAtravesId(idCliente);		
-		log.info("[finish] ProdutoApplicationService - buscaProdutosDoClienteComID ");
-		return null;
+		List<Produto> produtosDoCliente = produtoRepository.buscaProdutosDoClienteComID(idCliente);
+		log.info("[finish] ProdutoApplicationService - buscaProdutosDoClienteComID");
+		return ProdutoClienteListResponse.converte(produtosDoCliente);
 	}
 
 }
