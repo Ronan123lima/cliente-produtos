@@ -51,4 +51,12 @@ public class ProdutoController implements ProdutoAPI {
 		produtoService.deleteProdutoDoClienteComID(idCliente, idProduto);
 		log.info("[finaliza} ProdutoController - deleteProdutoDoClienteComId");
 	}
+
+	@Override
+	public ProdutoResponse patchProduto(UUID idCliente, UUID idProduto, @Valid ProdutoAlteracaoRequest produtoAlteracaoRequest) {
+		log.info("[inicia} ProdutoController - patchProduto");
+		log.info("[idCliente] {} - [idProduto] {}", idCliente, idProduto);		
+		log.info("[finaliza} ProdutoController - patchProduto");
+		return null;
+	}
 }
