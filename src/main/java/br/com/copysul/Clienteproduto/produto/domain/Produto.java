@@ -3,6 +3,7 @@ package br.com.copysul.Clienteproduto.produto.domain;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+import br.com.copysul.Clienteproduto.produto.application.api.ProdutoAlteracaoRequest;
 import br.com.copysul.Clienteproduto.produto.application.api.ProdutoRequest;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -47,5 +48,12 @@ public class Produto {
 		this.modeloProduto = produtoRequest.getModeloProduto();
 		this.tipo = produtoRequest.getTipo();
 		this.dataHoraDoChamado = LocalDateTime.now();
+	}
+
+	public void altera(ProdutoAlteracaoRequest produtoRequest) {
+		this.nomeProduto = produtoRequest.getNomeProduto();
+		this.modeloProduto = produtoRequest.getModeloProduto();
+		this.tipo = produtoRequest.getTipo();
+		this.dataHoraDaUltimaAlteracao = LocalDateTime.now();
 	}
 }

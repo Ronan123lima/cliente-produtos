@@ -6,6 +6,7 @@ import java.util.UUID;
 import org.springframework.stereotype.Service;
 
 import br.com.copysul.Clienteproduto.cliente.application.service.ClienteService;
+import br.com.copysul.Clienteproduto.produto.application.api.ProdutoAlteracaoRequest;
 import br.com.copysul.Clienteproduto.produto.application.api.ProdutoClienteDetalheResponse;
 import br.com.copysul.Clienteproduto.produto.application.api.ProdutoClienteListResponse;
 import br.com.copysul.Clienteproduto.produto.application.api.ProdutoRequest;
@@ -59,4 +60,13 @@ public class ProdutoApplicationService implements ProdutoService {
 		
 	}
 
+	@Override
+	public void alteraProdutoDoClienteComID(UUID idCliente, UUID idProduto, ProdutoAlteracaoRequest produtoAlteracaoRequest) {
+		log.info("[start] ProdutoApplicationService - alteraProdutoDoClienteComID ");
+		clienteService.buscaClienteAtravesId(idCliente);		
+		Produto produto = produtoRepository.buscaProduto(idProduto);
+		produto.altera(produtoAlteracaoRequest);
+		produtoRepository.salvaProduto(produto);
+		log.info("[finish] ProdutoApplicationService - alteraProdutoDoClienteComID ");
+	}
 }
