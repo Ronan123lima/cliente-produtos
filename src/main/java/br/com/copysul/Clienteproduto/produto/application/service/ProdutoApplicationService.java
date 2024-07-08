@@ -49,4 +49,11 @@ public class ProdutoApplicationService implements ProdutoService {
 		return new ProdutoClienteDetalheResponse(produto);
 	}
 
+	@Override
+	public void deleteProdutoDoClienteComID(UUID idCliente, UUID idProduto) {
+		log.info("[start] ProdutoApplicationService - deleteProdutoDoClienteComID ");
+		log.info("[finish] ProdutoApplicationService - deleteProdutoDoClienteComID ");
+		
+	}
+
 }

@@ -38,8 +38,17 @@ public class ProdutoController implements ProdutoAPI {
 	public ProdutoClienteDetalheResponse getProdutoDoClienteComId(UUID idCliente, UUID idProduto) {
 		log.info("[inicia} ProdutoController - getProdutoDoClienteComId");
 		log.info("[idCliente] {} - [idProduto] {}", idCliente, idProduto);		
+		log.info("[idCliente] {} - [idProduto] {}", idCliente, idProduto);		
 		ProdutoClienteDetalheResponse produto = produtoService.buscaProdutoDoClienteComID(idCliente, idProduto);
 		log.info("[finaliza} ProdutoController - getProdutoDoClienteComId");
 		return produto;
+	}
+
+	@Override
+	public void deleteProdutoDoClienteComId(UUID idCliente, UUID idProduto) {
+		log.info("[inicia} ProdutoController - deleteProdutoDoClienteComId");
+		log.info("[idCliente] {} - [idProduto] {}", idCliente, idProduto);		
+		produtoService.deleteProdutoDoClienteComID(idCliente, idProduto);
+		log.info("[finaliza} ProdutoController - deleteProdutoDoClienteComId");
 	}
 }

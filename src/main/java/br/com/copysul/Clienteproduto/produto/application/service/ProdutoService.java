@@ -13,4 +13,5 @@ public interface ProdutoService {
 	ProdutoResponse criaProduto(UUID idCliente, @Valid ProdutoRequest produtoRequest);
 	List<ProdutoClienteListResponse> buscaProdutosDoClienteComID(UUID idCliente);
 	ProdutoClienteDetalheResponse buscaProdutoDoClienteComID(UUID idCliente, UUID idProduto);
+	void deleteProdutoDoClienteComID(UUID idCliente, UUID idProduto);
 }
