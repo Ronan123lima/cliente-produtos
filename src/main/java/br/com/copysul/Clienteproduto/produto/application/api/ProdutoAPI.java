@@ -37,7 +37,7 @@ public interface ProdutoAPI {
 
 	@PatchMapping(value = "/{idProduto}")
 	@ResponseStatus(code = HttpStatus.NO_CONTENT)
-	ProdutoResponse patchProduto(@PathVariable UUID idCliente, @PathVariable UUID idProduto,
+	void patchProduto(@PathVariable UUID idCliente, @PathVariable UUID idProduto,
 			@Valid @RequestBody ProdutoAlteracaoRequest produtoAlteracaoRequest);
 
 }
